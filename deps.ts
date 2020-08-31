@@ -5,12 +5,16 @@ export { cfg } from "./config.ts";
 export { cache } from "https://x.nest.land/Discordeno@7.3.0/src/utils/cache.ts";
 export { sendMessage } from "https://x.nest.land/Discordeno@7.3.0/src/handlers/channel.ts";
 export { Intents } from "https://x.nest.land/Discordeno@7.3.0/src/types/options.ts";
-export { Embed, EmbedFooter } from "https://x.nest.land/Discordeno@7.3.0/src/types/message.ts"
+export {
+  Embed,
+  EmbedFooter,
+} from "https://x.nest.land/Discordeno@7.3.0/src/types/message.ts";
 export { editMember } from "https://x.nest.land/Discordeno@7.3.0/src/handlers/member.ts";
 export { EditMemberOptions } from "https://x.nest.land/Discordeno@7.3.0/src/types/member.ts";
 
 // Events
 export { messageCreate } from "./src/events/messageCreate.ts";
+export { join } from "./src/events/guildMemberAdd.ts";
 
 // Commands
 export { parrot } from "./src/commands/basic/parrot.ts";
@@ -23,5 +27,5 @@ export { searchUser, pushUser } from "./src/database/user.ts";
 // Utilities
 export { toAlpha } from "./src/utils/alphanumeric.ts";
 export { getRomanticized } from "./src/utils/roman.ts";
-export { createEmbed } from "./src/utils/createEmbed.ts"
+export { createEmbed } from "./src/utils/createEmbed.ts";
 export { changeName } from "./src/utils/changeNickname.ts";

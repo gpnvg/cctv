@@ -18,7 +18,7 @@ export const cfg = {
   },
   admin: {
     owners: [BigInt(ADD YOUR ID)],
-    logChannel: BigInt(THIS DOES NOTHING AT THE MOMENT),
+    logChannel: "ID for the log channel",
     adminRoles: ["INSERT ROLE ID HERE"],
   },
 };

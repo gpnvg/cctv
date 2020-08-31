@@ -10,9 +10,6 @@ import {
 
 export async function register(message: any): Promise<any> {
   let name: string;
-  cfg.bot.alphanumeric == true
-    ? name = await toAlpha(BigInt(message.author.id))
-    : name = await getRomanticized(BigInt(message.author.id));
 
   let embed = createEmbed(
     String(
@@ -20,7 +17,11 @@ export async function register(message: any): Promise<any> {
         message.author.username,
         message.author.discriminator,
         BigInt(message.author.id),
-      )} as: **${name}**`,
+      )} as: **${
+        cfg.bot.alphanumeric == true
+          ? name = await toAlpha(BigInt(message.author.id))
+          : name = await getRomanticized(BigInt(message.author.id))
+      }**`,
     ),
   );
   changeName(name, message.guildID, message.author.id);

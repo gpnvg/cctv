@@ -4,6 +4,7 @@ import {
   createEmbed,
   parrot,
   register,
+  regAll,
   fRegister,
 } from "../../deps.ts";
 
@@ -25,8 +26,9 @@ export function messageCreate(message: any) {
         register(message);
         break;
       }
-      case "forceRegister": {
-        console.log("No break for a reason!");
+      case "registerall": {
+        regAll(message);
+        break;
       }
       case "fregister": {
         fRegister(message);

@@ -4,6 +4,7 @@ export { cfg } from "./config.ts";
 // General
 export { cache } from "https://x.nest.land/Discordeno@7.3.0/src/utils/cache.ts";
 export { sendMessage } from "https://x.nest.land/Discordeno@7.3.0/src/handlers/channel.ts";
+export { fetchMembers } from "https://x.nest.land/Discordeno@7.3.0/src/handlers/guild.ts";
 export { Intents } from "https://x.nest.land/Discordeno@7.3.0/src/types/options.ts";
 export {
   Embed,
@@ -19,6 +20,7 @@ export { join } from "./src/events/guildMemberAdd.ts";
 // Commands
 export { parrot } from "./src/commands/basic/parrot.ts";
 export { register } from "./src/commands/db/register.ts";
+export { regAll } from "./src/commands/db/registerAll.ts";
 export { fRegister } from "./src/commands/db/forceRegister.ts";
 
 // Database work

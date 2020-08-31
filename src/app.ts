@@ -16,13 +16,3 @@ Client({
     },
   },
 });
-
-// Client({
-//   token: cfg.bot.token,
-//   intents: [Intents.GUILD_MESSAGES, Intents.GUILDS, Intents.GUILD_MEMBERS],
-//   eventHandlers: {
-//     ready: () {
-//       console.log("Logged");
-//     }
-//   }
-// })

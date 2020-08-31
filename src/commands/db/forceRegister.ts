@@ -15,22 +15,24 @@ export async function fRegister(message: any) {
     try {
       let user = message.mentions()[0].user;
 
+      let bed = await pushUser(
+        user.username,
+        user.discriminator,
+        BigInt(user.id),
+      );
+
       cfg.bot.alphanumeric == true
         ? name = await toAlpha(BigInt(user.id))
         : name = await getRomanticized(BigInt(user.id));
 
-      let embed = createEmbed(
-        String(
-          `${await pushUser(
-            user.username,
-            user.discriminator,
-            BigInt(user.id),
-          )} as: **${name}**`,
-        ),
-      );
-
-      changeName(name, message.guildID, user.id);
-      sendMessage(message.channel, { embed });
+      try {
+        let embed = createEmbed(`${bed} as: **${name}**`);
+        changeName(name, message.guildID, user.id);
+        sendMessage(message.channel, { embed });
+      } catch (err) {
+        let embed = createEmbed(`You have a higher role than the bot.`);
+        sendMessage(message.channel, { embed });
+      }
     } catch (err) {
       let embed = createEmbed(
         "You have do mention a user ... thats literally the point.",
